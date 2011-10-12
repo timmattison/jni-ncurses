@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
+import net.sourceforge.jnlp.util.FileUtils;
+import sun.misc.IOUtils;
 
 // Some guidance from: http://roguebasin.roguelikedevelopment.org/index.php/Java_Curses_Implementation
 public class JNIncurses {

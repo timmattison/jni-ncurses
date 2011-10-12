@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+import com.sun.xml.internal.ws.util.StringUtils;
 
 public class NCursesWindow {
 	private static final long fakeWindowPointer = Long.MIN_VALUE;
@@ -168,7 +168,8 @@ public class NCursesWindow {
 		}
 	}
 
-	// These methods access ncurses through other NCursesWindow methods, not directly
+	// These methods access ncurses through other NCursesWindow methods, not
+	// directly
 	public Coordinate getLowerRightCorner() {
 		if (windowPointerValid()) {
 			return new Coordinate(getLowerRightCornerX(), getLowerRightCornerY());
@@ -318,9 +319,11 @@ public class NCursesWindow {
 			// Print enough spaces to fill the window width
 			print(StringUtils.repeat(" ", getWidth()));
 
-			// Move back to the beginning of the line.  Don't use returnToStartOfLine since ncurses should have moved us to the
-			//   next line since we went right to the edge of the terminal.  returnToStartOfLine will put us under the line we
-			//   just cleared.
+			// Move back to the beginning of the line. Don't use
+			// returnToStartOfLine since ncurses should have moved us to the
+			// next line since we went right to the edge of the terminal.
+			// returnToStartOfLine will put us under the line we
+			// just cleared.
 			move(y, 0);
 		}
 	}
